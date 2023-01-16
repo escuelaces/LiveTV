@@ -5,14 +5,27 @@ import javafx.scene.control.ListCell;
 
 import javafx.scene.media.*;
 
+
+/*
+    public VideoCell() {
+        selectedProperty().addListener((observable, oldValue, newValue) -> {
+            var item = getItem();
+            if (!isEmpty() && item != null) {
+                if (isSelected())
+                    player.setMute(false);
+                else
+                    player.setMute(true);
+            }
+        });
+    }
+ */
+
 public class VideoCell extends ListCell<Channel> {
 
-    MediaPlayer player;
     MediaView mediaView;
 
-    public VideoCell() {
 
-    }
+
 
     @Override
     protected void updateItem(Channel channel, boolean empty) {
@@ -23,11 +36,13 @@ public class VideoCell extends ListCell<Channel> {
             setGraphic(null);
         }else{
 
+
+
             // Pone la celda alineada en el centro.
             setAlignment(Pos.CENTER);
 
             //Descarga, decodifica y reproduce el video
-            player = new MediaPlayer(new Media(channel.URL.get()));
+            var player = new MediaPlayer(new Media(channel.URL.get()));
             player.setAutoPlay(true);
             player.setMute(true);
 
