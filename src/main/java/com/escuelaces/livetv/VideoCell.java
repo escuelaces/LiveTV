@@ -6,19 +6,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.media.*;
 
 
-/*
-    public VideoCell() {
-        selectedProperty().addListener((observable, oldValue, newValue) -> {
-            var item = getItem();
-            if (!isEmpty() && item != null) {
-                if (isSelected())
-                    player.setMute(false);
-                else
-                    player.setMute(true);
-            }
-        });
-    }
- */
+
 
 public class VideoCell extends ListCell<Channel> {
 
